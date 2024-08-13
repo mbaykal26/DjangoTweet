@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+
+
+{% block  content%}
+<div class="col-md-10 mx-auto">
+    <h3> ADD TWEET  </h3>
+
+    <form action="" method="post">
+        {% csrf_token %}
+        
+        <div class="mb-3">
+          <label for="message" class="form-label">Message</label>
+          <input type="text" class="form-control" id="message" name="message">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Send Tweet</button>
+        
+    </form>
+
+</div>
+
+
+{% endblock  %}

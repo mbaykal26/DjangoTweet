@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+
+
+{% block  content%}
+
+<div class="col-md-10 mx-auto">
+    <h3> LIST TWEET </h3>
+
+    <ul>
+       {% for tweet in tweets_1  %}
+       <div class="list-group">
+        <b  class="list-group-item list-group-item-primary">
+          {{tweet.username}}
+        </b>
+        <label class="list-group-item list-group-item-action">{{tweet.message}}</label>
+      </div>
+      {% if tweet.username == user %}
+      <a href="{% url 'tweetapp:deletetweet' id=tweet.id%}"class="btn btn-danger">Delete</a>
+      {% endif %}
+      <br><br>
+       {% endfor %}
+    </ul>
+</div>
+
+
+
+
+
+{% endblock  %}
